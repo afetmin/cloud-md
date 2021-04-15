@@ -1,17 +1,24 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "./App.css"
+import "bootstrap/dist/css/bootstrap.min.css"
+import FileSearch from "./components/FileSearch/FileSearch"
 function App() {
   return (
     <div className="App container-fluid">
       <div className="row">
-        <div className="col-3 bg-danger left-panel">
-          <h1>zuo</h1>
+        <div className="col-4 left-panel">
+          <FileSearch
+            title="云文档"
+            onFileSearch={(value) => {
+              console.log(value)
+            }}
+          />
         </div>
-        <div className="col-9 bg-primary right-panel">
+        <div className="col-8 right-panel">
           <h1>you</h1>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
