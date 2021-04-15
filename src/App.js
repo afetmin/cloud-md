@@ -5,18 +5,22 @@ import FileList from "./components/FileList"
 
 function App() {
   return (
-    <div className="App container-fluid">
-      <div className="row">
-        <div className="col-4 left-panel">
+    <div className='App container-fluid'>
+      <div className='row'>
+        <div className='col-4 left-panel'>
           <FileSearch
-            title="云文档"
+            title='云文档'
             onFileSearch={(value) => {
               console.log(value)
             }}
           />
-          <FileList />
+          <FileList
+            onSaveEdit={(item, value) => {
+              console.log(item, value)
+            }}
+          />
         </div>
-        <div className="col-8 right-panel">
+        <div className='col-8 right-panel'>
           <h1>you</h1>
         </div>
       </div>
