@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons"
+import PropTypes from "prop-types"
 
 const FileSearch = ({ title, onFileSearch }) => {
   const [inputActive, setinputActive] = useState(false)
@@ -66,4 +67,12 @@ const FileSearch = ({ title, onFileSearch }) => {
   )
 }
 
+FileSearch.propTypes = {
+  title: PropTypes.string,
+  onFileSearch: PropTypes.func.isRequired,
+}
+
+FileSearch.defaultProps = {
+  title: "我的云文档",
+}
 export default FileSearch

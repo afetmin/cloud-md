@@ -1,6 +1,8 @@
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
-import FileSearch from "./components/FileSearch/FileSearch"
+import FileSearch from "./components/FileSearch"
+import FileList from "./components/FileList"
+
 function App() {
   return (
     <div className="App container-fluid">
@@ -12,6 +14,7 @@ function App() {
               console.log(value)
             }}
           />
+          <FileList />
         </div>
         <div className="col-8 right-panel">
           <h1>you</h1>
