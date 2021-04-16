@@ -39,7 +39,16 @@ function App() {
           </div>
         </div>
         <div className='col-8 right-panel'>
-          <TabList activeId='1' />
+          <TabList
+            activeId='1'
+            unsaveIds={["1", "2"]}
+            onTabClick={(id) => {
+              console.log(id)
+            }}
+            onCloseTab={(id) => {
+              console.log("close", id)
+            }}
+          />
         </div>
       </div>
     </div>
