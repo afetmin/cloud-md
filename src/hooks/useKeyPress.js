@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 const useKeyPress = (targetKeyCode) => {
   const [keyPressed, setKeyPressed] = useState(false)

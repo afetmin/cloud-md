@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEdit, faTrash, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { faMarkdown } from "@fortawesome/free-brands-svg-icons"
@@ -25,38 +25,23 @@ const FileList = ({ files, onFileClick, onSaveEdit, onFileDelete }) => {
     if (escPress && editStatus) {
       closeSearch()
     }
-    // const handleInputEvent = (event) => {
-    //   const { keyCode } = event
-    //   if (keyCode === 13 && editStatus) {
-    //     const editItem = files.find((file) => file.id === editStatus)
-    //     onSaveEdit(editItem.id, value)
-    //     setEditStatus(false)
-    //     setValue("")
-    //   } else if (keyCode === 27 && editStatus) {
-    //     closeSearch(event)
-    //   }
-    // }
-    // document.addEventListener("keyup", handleInputEvent)
-    // return () => {
-    //   document.removeEventListener("keyup", handleInputEvent)
-    // }
   })
 
   return (
-    <ul className='list-group list-group-flush file-list'>
+    <ul className='list-group list-group-flush file-list rounded-0'>
       {files.map((file) => {
         return (
           <li
-            className='row list-group-item bg-light d-flex align-items-center'
+            className='row list-group-item bg-light d-flex align-items-center mx-0'
             key={file.id}
           >
             {file.id !== editStatus ? (
               <>
-                <span className='col-1'>
+                <span className='col-2'>
                   <FontAwesomeIcon size='lg' icon={faMarkdown} />
                 </span>
                 <span
-                  className='col-8'
+                  className='col-6'
                   onClick={() => {
                     onFileClick(file.id)
                   }}
@@ -65,7 +50,7 @@ const FileList = ({ files, onFileClick, onSaveEdit, onFileDelete }) => {
                 </span>
                 <button
                   type='button'
-                  className='icon-btn col-1'
+                  className='icon-btn col-2'
                   onClick={() => {
                     setEditStatus(file.id)
                     setValue(file.title)
@@ -75,7 +60,7 @@ const FileList = ({ files, onFileClick, onSaveEdit, onFileDelete }) => {
                 </button>
                 <button
                   type='button'
-                  className='icon-btn col-1'
+                  className='icon-btn col-2'
                   onClick={() => {
                     onFileDelete(file.id)
                   }}
@@ -117,12 +102,12 @@ FileList.propTypes = {
 FileList.defaultProps = {
   files: [
     {
-      id: 1,
+      id: "1",
       title: "first",
       body: "first content",
     },
     {
-      id: 2,
+      id: "2",
       title: "second",
       body: "second content",
     },
